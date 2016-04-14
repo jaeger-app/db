@@ -1,24 +1,24 @@
 {
-  "name" : "jaeger-app/db",
-  "description" : "A simple database wrapper that can use either MySQLi or PDO.",
-  "require" : {
-    "php" : ">=5.4.0",
-    "voku/simple-mysqli": "^1.8",
-    "aura/sql": "^2.4",
-    "aura/sqlquery": "^2.6",
-    "jaeger-app/exceptions": "dev-master"
-  },
-  "require-dev" : {
-    "phpunit/phpunit" : "4.*"
-  },
-  "authors" : [ {
-    "name" : "Eric Lamb",
-    "email" : "eric@mithra62.com"
-  } ],
-  "autoload" : {
-    "psr-4" : {
-      "JaegerApp\\" : "src/"
-    }
-  },
-  "license" : "MIT"
+	"name": "jaeger-app/db",
+	"description": "A simple database wrapper that can use either MySQLi or PDO.",
+	"require": {
+		"php": ">=5.4.0",
+		"voku/simple-mysqli": "^1.8",
+		"aura/sql": "^2.4",
+		"aura/sqlquery": "^2.6",
+		"jaeger-app/exceptions": "dev-master"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "4.*"
+	},
+	"authors": [{
+		"name": "Eric Lamb",
+		"email": "eric@mithra62.com"
+	}],
+	"autoload": {
+		"psr-4": {
+			"JaegerApp\\": "src/"
+		}
+	},
+	"license": "MIT"
 }
