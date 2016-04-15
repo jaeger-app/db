@@ -21,7 +21,13 @@ use JaegerApp\Db;
  */
 class DbTest extends \PHPUnit_Framework_TestCase
 {
-
+    /**
+     * The name of the test database table
+     *
+     * @var string
+     */
+    protected $test_table_name = 'm62_test_table';
+    
     public function testInit()
     {
         $db = new Db();
