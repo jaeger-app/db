@@ -1,18 +1,19 @@
 <?php
 /**
- * mithra62
+ * Jaeger
  *
- * @copyright	Copyright (c) 2015, mithra62, Eric Lamb.
- * @link		http://mithra62.com/
+ * @author		Eric Lamb <eric@mithra62.com>
+ * @copyright	Copyright (c) 2015-2016, mithra62, Eric Lamb
+ * @link		http://jaeger-app.com
  * @version		1.0
- * @filesource 	./mithra62/Db.php
+ * @filesource 	./Db.php
  */
-namespace mithra62;
+namespace JaegerApp;
 
-use \mithra62\Exceptions\DbException;
+use JaegerApp\Exceptions\DbException;
 
 /**
- * mithra62 - Database Object
+ * Jaeger - Database Object
  *
  * Wrapper for a simple database interface
  *
@@ -21,11 +22,10 @@ use \mithra62\Exceptions\DbException;
  */
 class Db
 {
-
     /**
      * The external db object
      * 
-     * @var \voku\db\DB
+     * @var Db\DbInterface
      */
     protected $db = null;
 
@@ -67,7 +67,7 @@ class Db
     /**
      * Sets the method of accessing the database
      * @param string $type
-     * @return \mithra62\Db
+     * @return JaegerApp\Db
      */
     public function setAccessType($type)
     {
@@ -88,7 +88,7 @@ class Db
      * Set the columns we want to return
      * 
      * @param array $columns            
-     * @return \mithra62\Db
+     * @return \JaegerApp\Db
      */
     public function select(array $columns = array())
     {
@@ -100,7 +100,7 @@ class Db
      * Sets the main table we're pulling from
      * 
      * @param string $table            
-     * @return \mithra62\Db
+     * @return \JaegerApp\Db
      */
     public function from($table)
     {
@@ -114,7 +114,7 @@ class Db
      * Can be either a string or an array of key=>value pairs
      * 
      * @param array $where            
-     * @return \mithra62\Db
+     * @return \JaegerApp\Db
      */
     public function where($where = array())
     {
@@ -125,7 +125,7 @@ class Db
     /**
      * Returns the SQL WHERE
      * 
-     * @return \mithra62\mixed<array/string>
+     * @return \JaegerApp\mixed<array/string>
      */
     public function getWhere()
     {
@@ -146,7 +146,7 @@ class Db
      * Set the credentials for accessing the database
      * 
      * @param array $credentials            
-     * @return \mithra62\Db
+     * @return \JaegerApp\Db
      */
     public function setCredentials(array $credentials)
     {
@@ -157,7 +157,7 @@ class Db
     /**
      * Returns the credentials
      * 
-     * @return \mithra62\array
+     * @return \JaegerApp\array
      */
     public function getCredentials()
     {
@@ -253,7 +253,7 @@ class Db
             //fuck it; we're just gonna choose one then
             if(is_null($this->db)){
                 if( class_exists('PDO') ){
-                    $this->db = new Db\Pdo();
+                    $this->db = new Db\Pdo(); 
                 }
                 elseif ( function_exists('mysqli_select_db') ) {
                     $this->db = new Db\Mysqli();

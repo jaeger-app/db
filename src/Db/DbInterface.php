@@ -5,10 +5,10 @@
  * @copyright	Copyright (c) 2015, mithra62, Eric Lamb.
  * @link		http://mithra62.com/
  * @version		1.0
- * @filesource 	./mithra62/Db/DbInterface.php
+ * @filesource 	./Db/DbInterface.php
  */
  
-namespace mithra62\Db;
+namespace JaegerApp\Db;
 
 /**
  * mithra62 - Database Object Interface

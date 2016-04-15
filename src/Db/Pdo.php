@@ -8,7 +8,7 @@
  * @filesource 	./mithra62/Db/Pdo.php
  */
  
-namespace mithra62\Db;
+namespace JaegerApp\Db;
 
 use Aura\Sql\ExtendedPdo; 
 use Aura\SqlQuery\QueryFactory;

@@ -1,19 +1,19 @@
 <?php
 /**
- * mithra62
+ * Jaeger
  *
  * @author		Eric Lamb <eric@mithra62.com>
- * @copyright	Copyright (c) 2015, mithra62, Eric Lamb.
- * @link		http://mithra62.com/
+ * @copyright	Copyright (c) 2015-2016, mithra62, Eric Lamb
+ * @link		http://jaeger-app.com
  * @version		1.0
- * @filesource 	./mithra62/Exceptions/DbException.php
+ * @filesource 	./Exceptions/DbException.php
  */
-namespace mithra62\Exceptions;
+namespace JaegerApp\Exceptions;
 
-use mithra62\Exception;
+use JaegerApp\Exception;
 
 /**
- * mithra62 - Database Exception Object
+ * Jaeger - Database Exception Object
  *
  * Handles exceptions from the Database object
  *

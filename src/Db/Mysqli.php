@@ -8,7 +8,7 @@
  * @filesource 	./mithra62/Db/Mysqli.php
  */
  
-namespace mithra62\Db;
+namespace JaegerApp\Db;
 
 use voku\db\DB as vDb;
 
