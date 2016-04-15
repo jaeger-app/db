@@ -1,26 +1,25 @@
 <?php
 /**
- * mithra62 - Unit Test
+ * Jaeger
  *
- * @copyright	Copyright (c) 2015, mithra62, Eric Lamb.
- * @link		http://mithra62.com/
+ * @copyright	Copyright (c) 2015-2016, mithra62
+ * @link		http://jaeger-app.com
  * @version		1.0
- * @filesource 	./mithra62/tests/DbTest.php
+ * @filesource 	./tests/DbTest.php
  */
-namespace mithra62\tests;
+namespace JaegerApp\tests;
 
-use mithra62\tests\TestFixture;
-use mithra62\Db;
+use JaegerApp\Db;
 
 /**
- * mithra62 - Db object Unit Tests
+ * JaegerApp - Db object Unit Tests
  *
  * Contains all the unit tests for the \mithra62\Db object
  *
- * @package mithra62\Tests
+ * @package JaegerApp\Tests
  * @author Eric Lamb <eric@mithra62.com>
  */
-class DbTest extends TestFixture
+class DbTest extends \PHPUnit_Framework_TestCase
 {
 
     public function testInit()
@@ -36,7 +35,7 @@ class DbTest extends TestFixture
     {
         $db = new Db();
         $this->assertFalse($db->getTable());
-        $this->assertInstanceOf('mithra62\Db', $db->from($this->test_table_name));
+        $this->assertInstanceOf('JaegerApp\Db', $db->from($this->test_table_name));
         $this->assertEquals($this->test_table_name, $db->getTable());
     }
 
@@ -44,7 +43,7 @@ class DbTest extends TestFixture
     {
         $db = new Db();
         $this->assertEquals('1=1', $db->getWhere());
-        $this->assertInstanceOf('mithra62\Db', $db->where(array(
+        $this->assertInstanceOf('JaegerApp\Db', $db->where(array(
             'id' => 1
         )));
         $this->assertEquals(array(
@@ -56,7 +55,7 @@ class DbTest extends TestFixture
     {
         $db = new Db();
         $this->assertEquals(array(), $db->getCredentials());
-        $this->assertInstanceOf('mithra62\Db', $db->setCredentials($this->getDbCreds()));
+        $this->assertInstanceOf('JaegerApp\Db', $db->setCredentials($this->getDbCreds()));
         $this->assertEquals($this->getDbCreds(), $db->getCredentials());
     }
 
@@ -64,7 +63,7 @@ class DbTest extends TestFixture
     {
         $db = new Db();
         $db->setCredentials($this->getDbCreds());
-        $this->assertInstanceOf('mithra62\Db\DbInterface', $db->getDb());
+        $this->assertInstanceOf('JaegerApp\Db\DbInterface', $db->getDb());
     }
 
     public function testGetCreateTable()
@@ -191,4 +190,14 @@ class DbTest extends TestFixture
         $this->assertTrue(is_array($data));
         $this->assertCount(0, $data);
     }
+    
+    /**
+     * The Databaes Test Credentiasl
+     *
+     * @return array
+     */
+    protected function getDbCreds()
+    {
+        return include 'data/db.config.php';
+    }    
 }

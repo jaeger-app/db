@@ -5,3 +5,4 @@
 /.project
 /.settings
 /.buildpath
+/tests/data/db.config.php
