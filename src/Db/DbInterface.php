@@ -1,9 +1,9 @@
 <?php
 /**
- * mithra62
+ * Jaeger
  *
- * @copyright	Copyright (c) 2015, mithra62, Eric Lamb.
- * @link		http://mithra62.com/
+ * @copyright	Copyright (c) 2015-2016, mithra62
+ * @link		http://jaeger-app.com
  * @version		1.0
  * @filesource 	./Db/DbInterface.php
  */
@@ -11,7 +11,7 @@
 namespace JaegerApp\Db;
 
 /**
- * mithra62 - Database Object Interface
+ * Jaeger - Database Object Interface
  *
  * Outlines the methods the database drivers must adhere to
  *

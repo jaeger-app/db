@@ -1,11 +1,11 @@
 <?php
 /**
- * mithra62
+ * Jaeger
  *
- * @copyright	Copyright (c) 2015, mithra62, Eric Lamb.
- * @link		http://mithra62.com/
+ * @copyright	Copyright (c) 2015-2016, mithra62
+ * @link		http://jaeger-app.com
  * @version		1.0
- * @filesource 	./mithra62/Db/Pdo.php
+ * @filesource 	./Db/Pdo.php
  */
  
 namespace JaegerApp\Db;
@@ -14,7 +14,7 @@ use Aura\Sql\ExtendedPdo;
 use Aura\SqlQuery\QueryFactory;
 
 /**
- * mithra62 - PDO Database Object
+ * Jaeger - PDO Database Object
  *
  * Wrapper for a simple PDO abstraction
  *
@@ -58,7 +58,7 @@ class Pdo implements DbInterface
     
     /**
      * (non-PHPdoc)
-     * @see \mithra62\Db\DbInterface::select()
+     * @see \JaegerApp\Db\DbInterface::select()
      */
     public function select($table, $where)
     {
@@ -69,7 +69,7 @@ class Pdo implements DbInterface
     
     /**
      * (non-PHPdoc)
-     * @see \mithra62\Db\DbInterface::insert()
+     * @see \JaegerApp\Db\DbInterface::insert()
      */
     public function insert($table, array $data = array())
     {
@@ -93,7 +93,7 @@ class Pdo implements DbInterface
     
     /**
      * (non-PHPdoc)
-     * @see \mithra62\Db\DbInterface::update()
+     * @see \JaegerApp\Db\DbInterface::update()
      */
     public function update($table, $data, $where)
     {
@@ -133,7 +133,7 @@ class Pdo implements DbInterface
     
     /**
      * (non-PHPdoc)
-     * @see \mithra62\Db\DbInterface::escape()
+     * @see \JaegerApp\Db\DbInterface::escape()
      */
     public function escape($string)
     {
@@ -143,7 +143,7 @@ class Pdo implements DbInterface
     
     /**
      * (non-PHPdoc)
-     * @see \mithra62\Db\DbInterface::getAllTables()
+     * @see \JaegerApp\Db\DbInterface::getAllTables()
      */
     public function getAllTables()
     {
@@ -153,7 +153,7 @@ class Pdo implements DbInterface
     
     /**
      * (non-PHPdoc)
-     * @see \mithra62\Db\DbInterface::getTableStatus()
+     * @see \JaegerApp\Db\DbInterface::getTableStatus()
      */
     public function getTableStatus()
     {
@@ -163,7 +163,7 @@ class Pdo implements DbInterface
     
     /**
      * (non-PHPdoc)
-     * @see \mithra62\Db\DbInterface::getCreateTable()
+     * @see \JaegerApp\Db\DbInterface::getCreateTable()
      */
     public function getCreateTable($table, $if_not_exists = false)
     {
@@ -186,7 +186,7 @@ class Pdo implements DbInterface
     
     /**
      * (non-PHPdoc)
-     * @see \mithra62\Db\DbInterface::clear()
+     * @see \JaegerApp\Db\DbInterface::clear()
      */
     public function clear()
     {
@@ -197,7 +197,7 @@ class Pdo implements DbInterface
     
     /**
      * (non-PHPdoc)
-     * @see \mithra62\Db\DbInterface::totalRows()
+     * @see \JaegerApp\Db\DbInterface::totalRows()
      */
     public function totalRows($table)
     {
@@ -214,7 +214,7 @@ class Pdo implements DbInterface
     
     /**
      * (non-PHPdoc)
-     * @see \mithra62\Db\DbInterface::getColumns()
+     * @see \JaegerApp\Db\DbInterface::getColumns()
      */
     public function getColumns($table)
     {
@@ -228,7 +228,7 @@ class Pdo implements DbInterface
     
     /**
      * (non-PHPdoc)
-     * @see \mithra62\Db\DbInterface::get()
+     * @see \JaegerApp\Db\DbInterface::get()
      */
     public function get()
     {
@@ -259,7 +259,7 @@ class Pdo implements DbInterface
     /**
      * 
      * @param array $credentials
-     * @return \mithra62\Db\Mysqli
+     * @return \JaegerApp\Db\Mysqli
      */
     public function setCredentials(array $credentials)
     {
@@ -269,7 +269,7 @@ class Pdo implements DbInterface
     
     /**
      * (non-PHPdoc)
-     * @see \mithra62\Db\DbInterface::getDb()
+     * @see \JaegerApp\Db\DbInterface::getDb()
      */
     public function getDb($force = false)
     {

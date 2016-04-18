@@ -2,8 +2,7 @@
 /**
  * Jaeger
  *
- * @author		Eric Lamb <eric@mithra62.com>
- * @copyright	Copyright (c) 2015-2016, mithra62, Eric Lamb
+ * @copyright	Copyright (c) 2015-2016, mithra62
  * @link		http://jaeger-app.com
  * @version		1.0
  * @filesource 	./Db.php
@@ -232,7 +231,8 @@ class Db
      * 
      * @todo Update engine selection to be 
      *          polymorphic instead of conditional
-     * @return \voku\db\DB
+     * @return Db\DbInterface
+     * @throws Exceptions\DbException
      */
     public function getDb()
     {
@@ -272,7 +272,7 @@ class Db
     /**
      * Returns all the available tables
      * 
-     * @return multitype:\voku\db\array
+     * @return array
      */
     public function getTables()
     {
@@ -290,7 +290,7 @@ class Db
     /**
      * Returns the details for all the tables
      * 
-     * @return multitype:\voku\db\array
+     * @return array
      */
     public function getTableStatus()
     {
@@ -329,7 +329,7 @@ class Db
      * 
      * @param string $db_name
      *            The name of the database we want to change to
-     * @return \mithra62\Db
+     * @return \JaegerApp\Db
      */
     public function setDbName($db_name)
     {
