@@ -398,7 +398,7 @@ class Pdo implements DbInterface
                 ) {
                     foreach ($_value as $oldKey => $oldValue) {
                         /** @noinspection AlterInForeachInspection */
-                        $_value[$oldKey] = $this->secure($oldValue);
+                        $_value[$oldKey] = $this->escape($oldValue);
                     }
                     $_value = '(' . implode(' AND ', $_value) . ')';
                 } else {

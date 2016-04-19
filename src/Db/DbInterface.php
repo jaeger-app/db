@@ -44,7 +44,7 @@ interface DbInterface {
      * Inserts a row into a table
      * @param string $table
      * @param array $data
-     * @return bool
+     * @return false|int false on error
      */
     public function insert($table, array $data = array());
     
