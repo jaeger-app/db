@@ -216,7 +216,7 @@ class Db
      * 
      * @param string $sql            
      * @param bool $return            
-     * @return multitype:
+     * @return array|void
      */
     public function query($sql, $return = false)
     {

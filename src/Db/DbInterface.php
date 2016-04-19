@@ -18,8 +18,8 @@ namespace JaegerApp\Db;
  * @package Database
  * @author Eric Lamb <eric@mithra62.com>
  */
-interface DbInterface
-{   
+interface DbInterface {   
+    
     /**
      * Sets the table and where clauses
      * @param string $table The name of the primary table we're querying
