@@ -99,6 +99,7 @@ class Pdo implements DbInterface
     {
         $query_factory = new QueryFactory('mysql');
         $update = $query_factory->newUpdate()->table($table);
+        $cols = $bind = array();
         foreach($data AS $key => $value)
         {
             $cols[] = $key;
@@ -106,7 +107,7 @@ class Pdo implements DbInterface
         }
         
         if (is_string($where)) {
-            $where = $this->escape($where, false, false);
+            $where = $this->escape($where);
         } elseif (is_array($where)) {
             $where = $this->parseArrayPair($where, 'AND');
         } else {
@@ -122,7 +123,7 @@ class Pdo implements DbInterface
      * (non-PHPdoc)
      * @see \Aura\Sql\ExtendedPdo::query()
      */
-    public function query($sql = '', $params = false)
+    public function query($sql = '', $return = false)
     {
         if( strtolower(substr($sql,0, 6)) == 'select' || strtolower(substr($sql,0, 4)) == 'show' ){
             return $this->getDb()->fetchAll($sql);
@@ -137,8 +138,7 @@ class Pdo implements DbInterface
      */
     public function escape($string)
     {
-        return str_replace($this->escape_chars['search'], $this->escape_chars['replace'], $string);        
-        //return ltrim(rtrim($this->getDb()->quote($string), "'"), "'");
+        return str_replace($this->escape_chars['search'], $this->escape_chars['replace'], $string);  
     }
     
     /**
@@ -405,7 +405,7 @@ class Pdo implements DbInterface
                     $_value = $this->getDb()->quote($_value);
                 }
     
-                $quoteString = '`'.$_key.'`';//$this->escape(trim(str_ireplace($_connector, '', $_key)));
+                $quoteString = '`'.$_key.'`';
                 $pairs[] = ' ' . $quoteString . ' ' . $_connector . ' ' . $_value . " \n";
             }
     

@@ -81,9 +81,9 @@ class Mysqli implements DbInterface
      * (non-PHPdoc)
      * @see \JaegerApp\Db\DbInterface::query()
      */
-    public function query($sql = '', $params = false)
+    public function query($sql = '', $return = false)
     {
-        $data = $this->getDb()->query($sql, $params);
+        $data = $this->getDb()->query($sql, $return);
         if( $data instanceof \voku\db\Result )
         {
             return $data->fetchAllArray();

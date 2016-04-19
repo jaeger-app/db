@@ -59,9 +59,9 @@ interface DbInterface {
     /**
      * Executes a SQL query
      * @param string $sql
-     * @param string $params
+     * @param bool $return
      */
-    public function query($sql = '', $params = false);
+    public function query($sql = '', $return = false);
     
     /**
      * Returns the table status query
