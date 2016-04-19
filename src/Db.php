@@ -45,7 +45,7 @@ class Db
     /**
      * The WHERE for the SQL
      * 
-     * @var mixed<array/string>
+     * @var array|string
      */
     protected $where = '1=1';
 
@@ -124,7 +124,7 @@ class Db
     /**
      * Returns the SQL WHERE
      * 
-     * @return \JaegerApp\mixed<array/string>
+     * @return array|string
      */
     public function getWhere()
     {
@@ -215,7 +215,7 @@ class Db
      * Executes a query and, optionally, returns the result
      * 
      * @param string $sql            
-     * @param string $return            
+     * @param bool $return            
      * @return multitype:
      */
     public function query($sql, $return = false)
@@ -237,7 +237,6 @@ class Db
     public function getDb()
     {
         if (is_null($this->db)) {
-            $creds = $this->getCredentials();
             
             //try explicit type setting
             if( $this->getAccessType() == 'mysqli' && function_exists('mysqli_select_db') ){
@@ -295,7 +294,6 @@ class Db
     public function getTableStatus()
     {
         $tables = $this->getDb()->getTableStatus();
-        //query("SHOW TABLE STATUS", true);
         return $tables;
     }
 
@@ -341,7 +339,6 @@ class Db
      * Clears any records in memory associated with a result set.
      * It allows calling with no select query having occurred.
      *
-     * @param resource $result
      * @access public
      */
     public function clear()
