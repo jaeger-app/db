@@ -177,8 +177,8 @@ class Db
      * Inserts data into the $table
      * 
      * @param string $table            
-     * @param data $data            
-     * @return bool
+     * @param data $data        
+     * @return false|int|string false on error
      */
     public function insert($table, $data = array())
     {
